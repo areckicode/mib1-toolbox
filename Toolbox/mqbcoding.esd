@@ -206,9 +206,9 @@ keyValue
     label    ""
     poll     0   
         
-#script
-#   value    sys 1 0x0100 "/scripts/install_esd.sh"
-#   label    "Install green-menu screen files"   
+script
+   value    sys 1 0x0100 "/scripts/install_esd.sh"
+   label    "Install green-menu screen files"   
    
 ####################################################################
 screen Advanced Customization
@@ -236,10 +236,18 @@ keyValue
     label    "Be sure to only flash if you're sure you're flashing the right file."
     poll     0    
     
-#script
-#   value    sys 1 0x0100 "/scripts/copy_fec.sh"
-#   label    "Import FecContainer.fec from sda0/Advanced/FEC"
-#   
+script
+   value    sys 1 0x0100 "/scripts/backup_ifs.sh"
+   label    "Backup IFS to sda0/Backup/IFS"
+   
+script
+   value    sys 1 0x0100 "/scripts/flash_ifs.sh"
+   label    "Flash patched ifsroot.ifs from sda0/Advanced/IFS"
+
+script
+   value    sys 1 0x0100 "/scripts/copy_fec.sh"
+   label    "Import FecContainer.fec from sda0/Advanced/FEC"
+   
 #script
 #   value    sys 1 0x0100 "/scripts/copy_gem.sh"
 #   label    "Import GEM.jar from sda0/Advanced/GEM"
@@ -256,9 +264,6 @@ keyValue
 #   value    sys 1 0x0100 "/scripts/import_hosts.sh"
 #   label    "Import hosts file"
 #  
-#script
-#   value    sys 1 0x0100 "/scripts/flash_ifs.sh"
-#   label    "Flash ifsroot.ifs from sda0/Advanced/IFS"
 
    
 #############################################
